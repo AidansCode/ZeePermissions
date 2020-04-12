@@ -1,14 +1,31 @@
 package com.aidanmurphey.zeepermissions;
 
-import com.aidanmurphey.zeepermissions.models.Group;
-import com.aidanmurphey.zeepermissions.models.Model;
+import com.aidanmurphey.zeepermissions.listeners.Listeners;
+import org.bukkit.plugin.PluginDescriptionFile;
+import org.bukkit.plugin.java.JavaPlugin;
 
-import java.lang.reflect.Field;
+public final class ZeePermissions extends JavaPlugin {
 
-public final class ZeePermissions  {
+	/*
+	 * STATIC LOGIC
+	 */
 
-	public static void main(String[] args) {
+	private static ZeePermissions plugin;
+	public static ZeePermissions getPlugin() {
+		return plugin;
+	}
 
+	/*
+	 * INSTANCE LOGIC
+	 */
+
+	@Override
+	public void onEnable() {
+		plugin = this;
+		Listeners.initializeListeners();
+
+		PluginDescriptionFile pluginDescriptionFile = getDescription();
+		getLogger().info(pluginDescriptionFile.getName() + " has been enabled!");
 	}
 
 }
