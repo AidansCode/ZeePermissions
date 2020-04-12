@@ -1,0 +1,8 @@
+name: ZeePermissions
+version: ${project.version}
+main: com.aidanmurphey.zeepermissions.ZeePermissions
+api-version: 1.13
+load: STARTUP
+authors: [Aidan]
+description: Permissions for Minecraft servers
+website: aidanmurphey.com
